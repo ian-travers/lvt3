@@ -6,7 +6,7 @@
 
     <title>Laravel</title>
 
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css', 'build') }}" rel="stylesheet">
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -26,8 +26,8 @@
     </div>
 @endif
 <div id="app" class="flex items-center bg-gray-100 min-h-screen">
-    <home/>
+    <home></home>
 </div>
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="{{ mix('js/app.js', 'build') }}"></script>
 </body>
 </html>

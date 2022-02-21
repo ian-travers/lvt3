@@ -25,11 +25,12 @@
         @endauth
     </div>
 @endif
-<div id="app" class="bg-gray-100 py-12">
-    <div>
-        <home></home>
+<div id="app">
+    <div class="mt-8">
+        <modal1></modal1>
     </div>
 </div>
 <script src="{{ mix('js/app.js', 'build') }}"></script>
 </body>
 </html>
+

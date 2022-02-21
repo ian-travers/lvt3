@@ -41,6 +41,8 @@
     "devDependencies": {
         "@babel/core": "^7.17.5",
         "@babel/preset-env": "^7.16.11",
+        "@headlessui/vue": "^1.5.0",
+        "@heroicons/vue": "^1.0.5",
         "@tailwindcss/forms": "^0.4.0",
         "@vue/test-utils": "^2.0.0-rc.18",
         "alpinejs": "^3.4.2",

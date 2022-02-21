@@ -13,7 +13,7 @@
 </head>
 <body class="antialiased">
 @if (Route::has('login'))
-    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+    <div class="flex justify-end py-4 px-6">
         @auth
             <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
         @else
@@ -25,8 +25,10 @@
         @endauth
     </div>
 @endif
-<div id="app" class="flex items-center bg-gray-100 min-h-screen">
-    <home></home>
+<div id="app" class="bg-gray-100 py-12">
+    <div>
+        <home></home>
+    </div>
 </div>
 <script src="{{ mix('js/app.js', 'build') }}"></script>
 </body>

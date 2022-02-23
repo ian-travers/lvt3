@@ -5,24 +5,16 @@
     </ul>
 </template>
 
-<script>
+<script setup>
 import {onMounted, ref} from 'vue'
-export default {
-    props: ['title'],
-    setup(props) {
-        const allSkills = ref([])
+    const props = defineProps(['title'])
+    const allSkills = ref([])
 
-        onMounted(() => {
-            console.log('Here is m')
-            axios
-                .get('/skills')
-                .then(response => allSkills.value = response.data)
-        })
-
-        return {
-            allSkills
-        }
-    },
-}
+    onMounted(() => {
+        console.log('Here is m')
+        axios
+            .get('/skills')
+            .then(response => allSkills.value = response.data)
+    })
 </script>
 

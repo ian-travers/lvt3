@@ -1,22 +1,20 @@
 <template>
     <ul>
-        <li v-for="skill in allSkills.skills">{{ skill }}</li>
+        <li v-for="skill in allSkills">{{ skill }}</li>
     </ul>
 </template>
 
 <script>
-import {onMounted, reactive} from 'vue'
+import {onMounted, ref} from 'vue'
 export default {
     setup() {
-        const allSkills = reactive({
-            skills: [],
-        })
+        const allSkills = ref([])
 
         onMounted(() => {
             console.log('Here is m')
             axios
                 .get('/skills')
-                .then(response => allSkills.skills = response.data)
+                .then(response => allSkills.value = response.data)
         })
 
         return {

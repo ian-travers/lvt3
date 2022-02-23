@@ -1,4 +1,5 @@
 <template>
+    <p class="text-2xl">{{ title }}</p>
     <ul>
         <li v-for="skill in allSkills">{{ skill }}</li>
     </ul>
@@ -7,7 +8,8 @@
 <script>
 import {onMounted, ref} from 'vue'
 export default {
-    setup() {
+    props: ['title'],
+    setup(props) {
         const allSkills = ref([])
 
         onMounted(() => {

@@ -29,7 +29,7 @@
     <div class="mt-8">
         <modal1></modal1>
         <div class="mt-16 mx-12">
-            <just-get-json></just-get-json>
+            <just-get-json title="Get response with axios"></just-get-json>
         </div>
     </div>
 </div>

@@ -28,9 +28,11 @@
 <div id="app">
     <div class="mt-8">
         <modal1></modal1>
+        <div class="mt-16 mx-12">
+            <just-get-json></just-get-json>
+        </div>
     </div>
 </div>
 <script src="{{ mix('js/app.js', 'build') }}"></script>
 </body>
 </html>
-

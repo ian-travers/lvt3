@@ -81,9 +81,17 @@ export default {
     methods: {
         onSubmit() {
             axios.post('/projects', this.$data)
-                .then(response => alert(response.data.message))
+                .then(this.onSuccess)
                 .catch(error => this.errors.record(error.response.data.errors))
+        },
+
+        onSuccess(response) {
+            alert(response.data.message)
+            this.name = ''
+            this.description = ''
         }
-    }
+    },
+
+
 }
 </script>

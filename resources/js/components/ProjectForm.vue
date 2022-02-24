@@ -12,7 +12,7 @@
                     class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm"
                     placeholder="Project name"/>
             </div>
-            <p v-text="errors.get('name')" class="mt-1 text-xs text-red-600"></p>
+            <p v-if="errors.has('name')" v-text="errors.get('name')" class="mt-1 text-xs text-red-600"></p>
         </div>
         <div>
             <div
@@ -26,7 +26,7 @@
                     class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm"
                     placeholder="Project brief description"/>
             </div>
-            <p v-text="errors.get('description')" class="mt-1 text-xs text-red-600"></p>
+            <p v-if="errors.has('description')" v-text="errors.get('description')" class="mt-1 text-xs text-red-600"></p>
         </div>
 
         <button
@@ -43,6 +43,10 @@
 class Errors {
     constructor() {
         this.errors = {}
+    }
+
+    has(field) {
+        return this.errors.hasOwnProperty(field)
     }
 
     get(field) {

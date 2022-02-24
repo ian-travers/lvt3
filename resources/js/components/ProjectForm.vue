@@ -6,6 +6,7 @@
                 <label for="name" class="block text-xs font-medium text-gray-900">Name</label>
                 <input
                     v-model="name"
+                    @keydown="errors.clear('name')"
                     type="text"
                     name="name"
                     id="name"
@@ -20,6 +21,7 @@
                 <label for="name" class="block text-xs font-medium text-gray-900">Description</label>
                 <input
                     v-model="description"
+                    @keydown="errors.clear('description')"
                     type="text"
                     name="description"
                     id="description"
@@ -53,6 +55,10 @@ class Errors {
 
     record(errors) {
         this.errors = errors;
+    }
+
+    clear(field) {
+        delete this.errors[field]
     }
 }
 

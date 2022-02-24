@@ -7,14 +7,15 @@
 
 <script setup>
 import {onMounted, ref} from 'vue'
-    const props = defineProps(['title'])
-    const allSkills = ref([])
 
-    onMounted(() => {
-        console.log('Here is m')
-        axios
-            .get('/skills')
-            .then(response => allSkills.value = response.data)
-    })
+const props = defineProps(['title'])
+const allSkills = ref([])
+
+onMounted(() => {
+    console.log('Here is m')
+    axios
+        .get('/skills')
+        .then(response => allSkills.value = response.data)
+})
 </script>
 

@@ -26,7 +26,8 @@
                     class="block w-full border-0 p-0 text-gray-900 placeholder-gray-500 focus:ring-0 sm:text-sm"
                     placeholder="Project brief description"/>
             </div>
-            <p v-if="form.errors.has('description')" v-text="form.errors.get('description')" class="mt-1 text-xs text-red-600"></p>
+            <p v-if="form.errors.has('description')" v-text="form.errors.get('description')"
+               class="mt-1 text-xs text-red-600"></p>
         </div>
 
         <button
@@ -100,23 +101,35 @@ class Form {
         for (let field in this.originalData) {
             this[field] = ''
         }
+
+        this.errors.clear()
     }
 
     submit(requestType, url) {
-        axios[requestType](url, this.data())
-            .then(this.onSuccess.bind(this))
-            .catch(this.onFail.bind(this))
+        return new Promise((resolve, reject) => {
+            axios[requestType](url, this.data())
+                .then(response => {
+                    this.onSuccess(response.data)
+
+                    resolve(response.data)
+                })
+                .catch(error => {
+                    this.onFail(error.response.data.errors)
+
+                    reject(error.response.data.errors)
+                })
+        })
+
     }
 
-    onSuccess(response) {
+    onSuccess(data) {
         this.reset()
-        this.errors.clear()
 
-        alert(response.data.message)
+        alert(data.message)
     }
 
-    onFail(error) {
-        this.errors.record(error.response.data.errors)
+    onFail(errors) {
+        this.errors.record(errors)
     }
 }
 
@@ -133,6 +146,8 @@ export default {
     methods: {
         onSubmit() {
             this.form.submit('post', '/projects')
+                .then(data => console.log(data))
+                .catch(errors => console.log(errors))
         }
     }
 }

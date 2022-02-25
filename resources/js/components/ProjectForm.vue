@@ -88,11 +88,11 @@ class Form {
     }
 
     data() {
-        // Clone
-        let data = Object.assign({}, this)
+        let data = {}
 
-        delete data.originalData
-        delete data.errors
+        for (let property in this.originalData) {
+            data[property] = this[property]
+        }
 
         return data
     }

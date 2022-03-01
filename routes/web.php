@@ -4,6 +4,7 @@ use App\Http\Controllers\ProjectsController;
 use Illuminate\Support\Facades\Route;
 
 Route::view('/', 'welcome');
+Route::view('carousel', 'carousel');
 
 Route::get('skills', fn() => ['Laravel', 'PHP', 'Vue', 'Javascript', 'Tooling']);
 

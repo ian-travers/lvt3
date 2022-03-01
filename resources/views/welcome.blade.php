@@ -35,9 +35,3 @@
         </div>
     </div>
 </x-app-layout>
-<script>
-    import MenuList from "../js/components/MenuList";
-    export default {
-        components: {MenuList}
-    }
-</script>

@@ -22,8 +22,22 @@
                     <div class="mt-16 mx-12">
                         <just-get-json title="Get response with axios"></just-get-json>
                     </div>
+
+                    <div class="mt-16 mx-12">
+                        <menu-list :items="['one', 'two', 'three']">
+                            <template v-slot="props">
+                                <p class="text-indigo-600" v-text="props.item"></p>
+                            </template>
+                        </menu-list>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </x-app-layout>
+<script>
+    import MenuList from "../js/components/MenuList";
+    export default {
+        components: {MenuList}
+    }
+</script>

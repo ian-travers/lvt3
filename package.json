@@ -49,6 +49,7 @@
         "autoprefixer": "^10.4.2",
         "axios": "^0.25",
         "babel-jest": "^27.5.1",
+        "flickity": "^2.3.0",
         "jest": "^27.5.1",
         "laravel-mix": "^6.0.6",
         "lodash": "^4.17.19",

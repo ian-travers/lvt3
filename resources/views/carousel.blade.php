@@ -26,6 +26,18 @@
                         <img src="https://placeimg.com/640/480/any?5">
                     </carousel>
                 </div>
+
+                <div class="flex items-center justify-center my-8">
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg sm:w-20 text-center mx-4 p-4">
+                        <count :to="11"></count>
+                    </div>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg sm:w-20 text-center mx-4 p-4">
+                        <count :to="90000"></count>
+                    </div>
+                    <div class="border-2 border-dashed border-gray-300 rounded-lg sm:w-20 text-center mx-4 p-4">
+                        <count :to="1987"></count>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

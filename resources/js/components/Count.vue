@@ -3,8 +3,10 @@
 </template>
 
 <script>
+import InView from 'in-viewport'
+
 export default {
-    props: ['to'],
+    props: ['to', 'velocity'],
 
     data() {
         return {
@@ -15,12 +17,14 @@ export default {
 
     computed: {
         increment() {
-            return Math.ceil(this.to / 20)
+            return Math.ceil(this.to / this.velocity)
         }
     },
 
     mounted() {
-        this.interval = setInterval(this.tick, 20)
+        InView(this.$el, () => {
+            this.interval = setInterval(this.tick, this.velocity)
+        })
     },
 
     methods: {

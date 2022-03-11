@@ -9,9 +9,10 @@ import ProjectForm from "./components/ProjectForm"
 import MenuList from "./components/MenuList"
 import Carousel from "./components/Carousel"
 import Count from "./components/Count"
+import ScrollLink from "./components/ScrollLink";
 
 const app = createApp({
-    components: { Home, Modal1, JustGetJson, ProjectForm, MenuList, Carousel, Count }
+    components: { Home, Modal1, JustGetJson, ProjectForm, MenuList, Carousel, Count, ScrollLink }
 });
 
 app.mount("#app");

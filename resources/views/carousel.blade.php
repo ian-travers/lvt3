@@ -27,6 +27,11 @@
                     </carousel>
                 </div>
 
+                <div class="mx-4">
+                    <h1 class="text-2xl font-bold">Smooth Scroll</h1>
+                    <scroll-link href="#smooth" class="text-blue-500">Scroll to the bottom section</scroll-link>
+                </div>
+
                 <div style="padding-top: 1000px" class="flex items-center justify-center my-8">
                     <div class="border-2 border-dashed border-gray-300 rounded-lg sm:w-20 text-center mx-4 p-4">
                         <count :to="12" :velocity="40"></count>
@@ -36,6 +41,17 @@
                     </div>
                     <div class="border-2 border-dashed border-gray-300 rounded-lg sm:w-20 text-center mx-4 p-4">
                         <count :to="1987" :velocity="40"></count>
+                    </div>
+                </div>
+
+                <div id="smooth" class="mt-12 mb-4">
+                    <h2 class="text-xl font-bold px-8 py-4">To smooth scroll section</h2>
+                    <div class="flex px-4">
+                        <div class="w-1/3 h-48 bg-gray-100 px-4 py-2">
+                            <scroll-link href="#app" class="text-blue-500">Go to the top</scroll-link>
+                        </div>
+                        <div class="w-1/3 h-48 bg-gray-200 px-4 py-2">Item</div>
+                        <div class="w-1/3 h-48 bg-gray-100 px-4 py-2">Item</div>
                     </div>
                 </div>
             </div>

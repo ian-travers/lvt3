@@ -19,17 +19,47 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
                     <carousel autoplay="true">
-                        <img src="https://placeimg.com/640/480/any">
-                        <img src="https://placeimg.com/640/480/any?2">
-                        <img src="https://placeimg.com/640/480/any?3">
-                        <img src="https://placeimg.com/640/480/any?4">
-                        <img src="https://placeimg.com/640/480/any?5">
+                        <img src="https://placeimg.com/640/480/any" alt="random image">
+                        <img src="https://placeimg.com/640/480/any?2" alt="random image">
+                        <img src="https://placeimg.com/640/480/any?3" alt="random image">
+                        <img src="https://placeimg.com/640/480/any?4"alt="random image">
+                        <img src="https://placeimg.com/640/480/any?5" alt="random image">
                     </carousel>
                 </div>
 
-                <div class="mx-4">
-                    <h1 class="text-2xl font-bold">Smooth Scroll</h1>
-                    <scroll-link href="#smooth" class="text-blue-500">Scroll to the bottom section</scroll-link>
+                <div class="flex justify-between items-center">
+                    <div class="mx-4">
+                        <h1 class="text-2xl font-bold">Smooth Scroll (Practical Vue Components Ep. 1)</h1>
+                        <scroll-link href="#smooth" class="text-blue-500">Scroll to the bottom section</scroll-link>
+                    </div>
+                    <div class="mx-4">
+                        <h1 class="text-2xl font-bold">Modal (Practical Vue Components Ep. 4)</h1>
+                        <p><a href="#cancel-modal" class="text-blue-500">Open Modal</a></p>
+
+                        <modal name="cancel-modal">
+                            <h1 class="text-2xl text-semibold">Leaving So Soon?</h1>
+                            <p class="my-4">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut consectetur enim fugiat in nam sequi! Ab accusantium aperiam aut blanditiis dolorem eos in nam nemo optio quas quia quibusdam quis, reiciendis rem sapiente similique, soluta temporibus totam. Accusantium architecto nemo quaerat reiciendis repellendus?
+                            </p>
+
+                            <template v-slot:footer>
+                                <a href="#" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md mr-2">Cancel</a>
+                                <a href="#confirm-cancel-modal" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">Confirm Cancellation</a>
+                            </template>
+                        </modal>
+
+                        <modal name="confirm-cancel-modal">
+                            <h1 class="text-2xl text-semibold">Are You 100% Sure?</h1>
+                            <p class="my-4">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut consectetur enim fugiat in nam sequi! Ab accusantium aperiam aut blanditiis dolorem eos in nam nemo, soluta temporibus totam. Accusantium architecto nemo quaerat reiciendis repellendus?
+                            </p>
+
+                            <template v-slot:footer>
+                                <a href="#" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md mr-2">Cancel</a>
+                                <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">Yes</a>
+                            </template>
+                        </modal>
+                    </div>
                 </div>
 
                 <div style="padding-top: 1000px" class="flex items-center justify-center my-8">

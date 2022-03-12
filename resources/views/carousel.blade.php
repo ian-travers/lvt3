@@ -34,7 +34,9 @@
                     </div>
                     <div class="mx-4">
                         <h1 class="text-2xl font-bold">Modal (Practical Vue Components Ep. 4)</h1>
-                        <p><a href="#cancel-modal" class="text-blue-500">Open Modal</a></p>
+                        <p>
+                            <button @click="$modal.show('cancel-modal')" class="text-blue-500">Open Modal</button>
+                        </p>
 
                         <modal name="cancel-modal">
                             <h1 class="text-2xl text-semibold">Leaving So Soon?</h1>
@@ -43,7 +45,7 @@
                             </p>
 
                             <template v-slot:footer>
-                                <a href="#" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md mr-2">Cancel</a>
+                                <button @click="$modal.hide()" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md mr-2">Cancel</button>
                                 <a href="#confirm-cancel-modal" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">Confirm Cancellation</a>
                             </template>
                         </modal>
@@ -55,7 +57,7 @@
                             </p>
 
                             <template v-slot:footer>
-                                <a href="#" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md mr-2">Cancel</a>
+                                <button @click="$modal.hide()" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded-md mr-2">Cancel</button>
                                 <a href="#" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">Yes</a>
                             </template>
                         </modal>

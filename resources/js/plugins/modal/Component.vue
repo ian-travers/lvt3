@@ -17,7 +17,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .overlay {
     visibility: hidden;
     position: fixed;
@@ -63,3 +63,4 @@ export default {
 
 
 </style>
+

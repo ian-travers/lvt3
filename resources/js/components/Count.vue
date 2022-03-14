@@ -1,40 +1,38 @@
 <template>
-    <span v-text="counting.count" ref="num"></span>
+    <span v-text="count" ref="num"></span>
 </template>
 
 <script>
 import InView from 'in-viewport'
-import {computed, onMounted, reactive, ref} from "vue";
+import {computed, onMounted, ref} from "vue";
 
 export default {
     props: ['to', 'velocity'],
 
     setup(props) {
         const num = ref(null)
-        const counting = reactive({
-            count: 0,
-            interval: 0,
-        })
+        const count = ref(0)
+        const interval = ref(0)
 
         const increment = computed(() => Math.ceil(props.to / props.velocity))
 
         function tick() {
-            if (counting.count + increment.value >= props.to) {
-                counting.count = props.to
+            if (count.value + increment.value >= props.to) {
+                count.value = props.to
 
-                return clearInterval(counting.interval)
+                return clearInterval(interval.value)
             }
 
-            counting.count += increment.value
+            count.value += increment.value
         }
 
         onMounted(() => {
             InView(num.value, () => {
-                counting.interval = setInterval(tick, props.velocity)
+                interval.value = setInterval(tick, props.velocity)
             })
         })
 
-        return {num, counting, increment, tick}
+        return {num, count, interval, increment, tick}
     },
 }
 </script>

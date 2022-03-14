@@ -11,13 +11,15 @@ import Carousel from "./components/Carousel"
 import Count from "./components/Count"
 import ScrollLink from "./components/ScrollLink"
 import Modal from './plugins/modal/ModalPlugin'
+import Tabs from './components/Tabs'
+import Tab from './components/Tab'
 
 const app = createApp({
-    components: {Home, Modal1, JustGetJson, ProjectForm, MenuList, Carousel, Count, ScrollLink}
-});
+    components: {Home, Modal1, JustGetJson, ProjectForm, MenuList, Carousel, Count, ScrollLink, Tabs, Tab}
+})
 
-app.use(Modal);
-app.mount("#app");
+app.use(Modal)
+app.mount("#app")
 
-window.Alpine = Alpine;
-Alpine.start();
+window.Alpine = Alpine
+Alpine.start()

@@ -64,6 +64,23 @@
                     </div>
                 </div>
 
+                <div class="mt-12 px-4">
+                    <tabs>
+                        <tab title="First" tab-key="my-tab-1">
+                            <div>This is content 1</div>
+                        </tab>
+                        <tab title="Second" tab-key="my-tab-2">
+                            <div>This is content 2</div>
+                        </tab>
+                        <tab title="Third" tab-key="my-tab-3" active>
+                            <div>This is content 3</div>
+                        </tab>
+                        <tab title="The Last" tab-key="whatever">
+                            <div>This is way too over</div>
+                        </tab>
+                    </tabs>
+                </div>
+
                 <div style="padding-top: 1000px" class="flex items-center justify-center my-8">
                     <div class="border-2 border-dashed border-gray-300 rounded-lg sm:w-20 text-center mx-4 p-4">
                         <count :to="12" :velocity="40"></count>

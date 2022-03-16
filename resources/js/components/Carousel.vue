@@ -1,26 +1,27 @@
 <template>
-    <div>
+    <div ref="carousel">
         <slot></slot>
     </div>
 </template>
 
-<script>
+<script setup>
 import Flickity from 'flickity'
 import 'flickity/dist/flickity.min.css'
+import {ref, onMounted} from "vue";
 
-export default {
-    props: {
-        wraparound: {default: true},
-        autoplay: {default: false}
-    },
+const carousel = ref(null)
 
-    mounted() {
-        new Flickity(this.$el, {
-            wrapAround: this.wraparound,
-            autoPlay: this.autoplay,
-            cellAlign: 'left',
-            contain: true
-        })
-    }
-}
+const props = defineProps({
+    wraparound: {type: Boolean, default: true},
+    autoplay: {type: Boolean, default: false},
+})
+
+onMounted(() => {
+    new Flickity(carousel.value, {
+        wraparound: props.wraparound,
+        autoPlay: props.autoplay,
+        cellAlign: 'left',
+        contain: true
+    })
+})
 </script>

@@ -26,7 +26,7 @@
                     <div class="mt-16 mx-12">
                         <menu-list :items="['one', 'two', 'three']">
                             <template v-slot="props">
-                                <p class="text-indigo-600" v-text="props.item"></p>
+                                <p class="text-indigo-600 underline" v-text="props.item"></p>
                             </template>
                         </menu-list>
                     </div>

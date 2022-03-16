@@ -6,8 +6,6 @@
     </ul>
 </template>
 
-<script>
-export default {
-    props: ['items']
-}
+<script setup>
+const props = defineProps(['items'])
 </script>

@@ -21,7 +21,7 @@
                         leave-from="opacity-100"
                         leave-to="opacity-0"
                     >
-                        <DialogOverlay class="fixed inset-0" />
+                        <DialogOverlay class="fixed inset-0"/>
                     </TransitionChild>
 
                     <span class="inline-block h-screen align-middle" aria-hidden="true">
@@ -70,37 +70,18 @@
     </TransitionRoot>
 </template>
 
-<script>
-import { ref } from 'vue'
-import {
-    TransitionRoot,
-    TransitionChild,
-    Dialog,
-    DialogOverlay,
-    DialogTitle,
-} from '@headlessui/vue'
+<script setup>
+import {ref} from 'vue'
+import {TransitionRoot, TransitionChild, Dialog, DialogOverlay, DialogTitle} from '@headlessui/vue'
 
-export default {
-    components: {
-        TransitionRoot,
-        TransitionChild,
-        Dialog,
-        DialogOverlay,
-        DialogTitle,
-    },
+const isOpen = ref(false)
 
-    setup() {
-        const isOpen = ref(false)
-
-        return {
-            isOpen,
-            closeModal() {
-                isOpen.value = false
-            },
-            openModal() {
-                isOpen.value = true
-            },
-        }
-    },
+function closeModal() {
+    isOpen.value = false
 }
+
+function openModal() {
+    isOpen.value = true
+}
+
 </script>

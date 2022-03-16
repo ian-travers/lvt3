@@ -7,14 +7,10 @@
     </a>
 </template>
 
-<script>
-export default {
-    props: ['href'],
+<script setup>
+const props = defineProps(['href'])
 
-    methods: {
-        scroll() {
-            document.querySelector(this.href).scrollIntoView({ behavior: "smooth" })
-        }
-    }
+function scroll() {
+    document.querySelector(props.href).scrollIntoView({ behavior: "smooth" })
 }
 </script>

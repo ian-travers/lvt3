@@ -31,7 +31,7 @@ export default {
                     return {
                         key: i.props["tab-key"],
                         title: i.props.title,
-                        active: i.props.active =='' ? true : false
+                        active: i.props.active === ''
                     }
                 }
             })
